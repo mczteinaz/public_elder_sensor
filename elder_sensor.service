@@ -1,0 +1,16 @@
+[Unit]
+Description=Elder Sensor IoT Project
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 3
+ExecStart=/usr/bin/python3 /home/pi/Desktop/ProjectCode/elder_code_version_1111.3.py
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
